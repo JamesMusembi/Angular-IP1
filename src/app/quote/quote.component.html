@@ -1,15 +1,18 @@
 <div class="container-fluid">
     <h4>Select a Quote</h4>
-    <div class="=row" >
-       <div class="col-md-5 ">
-           <div class="quote-item" *ngFor='let quote of quotes'>
+    <div class="row" >
+       <div class="col-md-6 ">
+           <div class="quote-item" *ngFor='let quote of quotes ; let  index as index'>
                 <p> {{quote.id}}.</p>
                 <p> {{quote.Quote}} <br> -{{quote.author}} </p>
                 <p>  submitted by:{{quote.submited}}</p>
+                <button class="btn btn-warning mx-2">downvote {{quote.downVote}} </button>
+                <button class="btn btn-success me-4">upvote {{quote.upVote}} </button>
+                <button class="btn btn-danger ms-3">Delete </button>
            </div>
        </div>
-       <div class="col-md-5 bg-warning">
-            <app-quote-form></app-quote-form>
+       <div class="col-md-5 ">
+        <app-quote-form></app-quote-form>
        </div>
        
     </div>
