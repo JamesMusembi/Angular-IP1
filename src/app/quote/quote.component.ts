@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
 import { FormsModule } from '@angular/forms';
-
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
