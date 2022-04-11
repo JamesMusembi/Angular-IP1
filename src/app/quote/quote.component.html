@@ -2,17 +2,22 @@
     <h4>Select a Quote</h4>
     <div class="row" >
        <div class="col-md-6 ">
-           <div class="quote-item" *ngFor='let quote of quotes ; let  index as index'>
-                <p> {{quote.id}}.</p>
+           <div class="quote-item" *ngFor='let quote of quotes ; index as index'>
+                <p class="text-center"> {{quote.title}}.</p>
                 <p> {{quote.Quote}} <br> -{{quote.author}} </p>
                 <p>  submitted by:{{quote.submited}}</p>
-                <button class="btn btn-warning mx-2">downvote {{quote.downVote}} </button>
-                <button class="btn btn-success me-4">upvote {{quote.upVote}} </button>
-                <button class="btn btn-danger ms-3">Delete </button>
+                <p>  Date submit :{{quote.date }}</p>
+
+                <button class="btn btn-warning mx-2" (click)='downvote(index)' >downvote {{quote.downVote}} </button>
+                <button class="btn btn-success me-4" (click)='upvote(index)'>upvote {{quote.upVote}} </button>
+
+                <button class="btn btn-danger ms-3" (click)= 'quoteDelete(index)' >Delete </button>
+              
            </div>
        </div>
+      
        <div class="col-md-5 ">
-        <app-quote-form></app-quote-form>
+        <app-quote-form (quoteSubmitEvent)="addQuote($event)" ></app-quote-form>
        </div>
        
     </div>
